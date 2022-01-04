@@ -6,12 +6,9 @@ namespace DandE.DocumentHandler
     {
         DocumentParser parser;
 
-        public WordDocumentCard(byte[] bytes, ILogger logger) : base(bytes, logger)
+        public WordDocumentCard(byte[] bytes) : base(bytes)
         {
         }
-
-        public WordDocumentCard(string fileName, ILogger logger) : base(File.ReadAllBytes(fileName), logger) { }
-
 
         public override DocumentParser Parser
         {

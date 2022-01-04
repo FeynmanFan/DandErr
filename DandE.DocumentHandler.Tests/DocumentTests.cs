@@ -6,20 +6,16 @@ namespace DandE.DocumentHandler.Tests
     public class DocumentTests
     {
         [Fact]
-        public void Doc1Properties()
+        public void Doc1Text()
         {
             // arrange
-            var expectedText = "From “I Am So Proud”To sit in solemn silence in a dull, dark, dock, In a pestilential prison, with a life-long lock,Awaiting the sensation of a short, sharp, shock, From a cheap and chippy chopper on a big black block";
-            var expectedTitle = "Test Document #1";
-
-            var logger = new LoggerFactory().CreateLogger("Doc1Properties Test");
+            var expected = "Test Document #1To sit in solemn silence in a dull, dark, dock, In a pestilential prison, with a life-long lock,Awaiting the sensation of a short, sharp, shock, From a cheap and chippy chopper on a big black block";
 
             // act
-            var docCard = new WordDocumentCard(TestFiles.Test_Document, logger);
+            var docCard = new WordDocumentCard(TestFiles.Test_Document);
 
             // assert
-            Assert.Equal(expectedText, docCard.Text);
-            Assert.Equal(expectedTitle, docCard.Title);
+            Assert.Equal(expected, docCard.Text);
         }
     }
 }

@@ -16,15 +16,3 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-li {
-    text-align: left;
-}
-
-.infopanel {
-    text-align: left;
-    border: 2px solid black;
-    padding: 7px;
-    background-color: #DDABEA;
-    display:none;
-}
