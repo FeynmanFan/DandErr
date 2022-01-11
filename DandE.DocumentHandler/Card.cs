@@ -12,6 +12,8 @@
             this.Title = result.Title;
         }
 
+        public Card() { }
+
         public abstract DocumentParser Parser { get; }
 
         public string Text { get; set; }

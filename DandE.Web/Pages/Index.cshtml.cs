@@ -1,8 +1,10 @@
 ﻿namespace WebApplication1.Pages
 {
     using DandE.DocumentHandler;
+    using DocumentFormat.OpenXml.Packaging;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using System.Reflection;
+    using System.IO.Packaging;
 
     public class IndexModel : PageModel
     {
@@ -31,7 +33,22 @@
 
                 var documents = Directory.GetFiles(docPath, "*.docx");
 
-                return documents.Select(x => new WordDocumentCard(System.IO.File.ReadAllBytes(x)));
+                var documentCollection = new List<WordDocumentCard>();
+
+                foreach (var document in documents)
+                {
+                    var wordDoc = WordprocessingDocument.Open(document, false);
+
+                    var doc = new WordDocumentCard
+                    {
+                        Text = wordDoc.MainDocumentPart.Document.InnerText,
+                        Title = wordDoc.PackageProperties.Title
+                    };
+
+                    documentCollection.Add(doc);
+                }
+
+                return documentCollection;
             }
         }
     }

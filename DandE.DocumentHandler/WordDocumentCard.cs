@@ -8,6 +8,8 @@
         {
         }
 
+        public WordDocumentCard() { }
+
         public override DocumentParser Parser
         {
             get
