@@ -10,7 +10,8 @@
 
             return new ParseResult
             {
-                Text = document.MainDocumentPart.Document.InnerText
+                Text = document.MainDocumentPart.Document.InnerText, 
+                Title = document.PackageProperties.Title
             };
         }
 

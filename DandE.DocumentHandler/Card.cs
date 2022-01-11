@@ -6,7 +6,10 @@
         {
             this.Bytes = bytes;
 
-            this.Text = this.Parser.ParseDocument(bytes).Text;
+            var result = this.Parser.ParseDocument(bytes);
+
+            this.Text = result.Text;
+            this.Title = result.Title;
         }
 
         public abstract DocumentParser Parser { get; }
