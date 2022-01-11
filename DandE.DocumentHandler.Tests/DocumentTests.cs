@@ -1,6 +1,7 @@
 namespace DandE.DocumentHandler.Tests
 {
     using Xunit;
+    using System.IO;
 
     public class DocumentTests
     {
@@ -17,6 +18,18 @@ namespace DandE.DocumentHandler.Tests
             // assert
             Assert.Equal(expectedText, docCard.Text);
             Assert.Equal(expectedTitle, docCard.Title);
+        }
+
+        [Fact]
+        public void OutputFileFunctionProducesFile()
+        {
+            var filePath = @"C:\DAndErr\outputfile.txt";
+
+            Assert.True(File.Exists(filePath));
+
+            var result = File.ReadAllText(filePath);
+
+            Assert.True(!string.IsNullOrEmpty(result));
         }
     }
 }
