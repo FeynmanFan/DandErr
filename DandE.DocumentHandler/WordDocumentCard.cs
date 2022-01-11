@@ -12,11 +12,6 @@
         {
             get
             {
-                if (this.parser == null)
-                {
-                    this.parser = new WordDocumentParser();
-                }
-
                 return this.parser;
             }
         }
