@@ -8,6 +8,19 @@
         {
         }
 
+        public WordDocumentCard(string filePath) : base()
+        {
+            try
+            {
+                var bytes = File.ReadAllBytes(filePath);
+
+                this.Bytes = bytes;
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
         public override DocumentParser Parser
         {
             get

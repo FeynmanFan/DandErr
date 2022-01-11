@@ -2,6 +2,8 @@
 {
     public abstract class Card
     {
+        public Card() { }
+
         public Card(byte[] bytes)
         {
             this.Bytes = bytes;

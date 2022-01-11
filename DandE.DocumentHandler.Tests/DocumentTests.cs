@@ -1,5 +1,6 @@
 namespace DandE.DocumentHandler.Tests
 {
+    using System.IO;
     using Xunit;
 
     public class DocumentTests
@@ -17,6 +18,12 @@ namespace DandE.DocumentHandler.Tests
             // assert
             Assert.Equal(expectedText, docCard.Text);
             Assert.Equal(expectedTitle, docCard.Title);
+        }
+
+        [Fact]
+        public void VerifyMissingDocument()
+        {
+            Assert.Throws<FileNotFoundException>(() => new WordDocumentCard("Nonexistent file path"));
         }
     }
 }
