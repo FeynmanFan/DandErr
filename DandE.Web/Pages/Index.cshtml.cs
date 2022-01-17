@@ -1,15 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace WebApplication1.Pages
+﻿namespace WebApplication1.Pages
 {
+    using DandE.DocumentHandler;
+    using Microsoft.AspNetCore.Mvc.RazorPages;
+
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<IndexModel> logger;
+        IWebHostEnvironment environment;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> _logger, IWebHostEnvironment _environment)
         {
             _logger = logger;
+            logger = _logger;
+            environment = _environment;
         }
 
         public void OnGet()
