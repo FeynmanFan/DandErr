@@ -18,5 +18,15 @@ namespace DandE.DocumentHandler.Tests
             Assert.Equal(expectedText, docCard.Text);
             Assert.Equal(expectedTitle, docCard.Title);
         }
+
+        [Fact]
+        public void DocumentTitleIsFromIAmSoProud()
+        {
+            var expectedTitle = "From I Am So Proud";
+
+            var docCard = new WordDocumentCard(TestFiles.Test_Document);
+
+            Assert.True(false, "write the test");
+        }
     }
 }
