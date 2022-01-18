@@ -1,0 +1,1 @@
+{"version":3,"file":"documentCard.js","sourceRoot":"","sources":["../../scripts/documentCard.ts"],"names":[],"mappings":"AAAA;IAQI,sBAAY,KAAa,EAAE,QAAgB;QACvC,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;QACnB,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;IAC7B,CAAC;IAPD,sBAAI,gCAAM;aAAV;YACI,OAAO,IAAI,CAAC,QAAQ,CAAC,MAAM,CAAC;QAChC,CAAC;;;OAAA;IAML,mBAAC;AAAD,CAAC,AAZD,IAYC"}
