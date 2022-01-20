@@ -4,12 +4,22 @@
     {
         public Card(byte[] bytes)
         {
+            Populate(bytes);
+        }
+
+        private void Populate(byte[] bytes)
+        {
             this.Bytes = bytes;
 
             var result = this.Parser.ParseDocument(bytes);
 
             this.Text = result.Text;
             this.Title = result.Title;
+        }
+
+        public Card(string fileName)
+        {
+            Populate(File.ReadAllBytes(fileName));
         }
 
         public abstract DocumentParser Parser { get; }
