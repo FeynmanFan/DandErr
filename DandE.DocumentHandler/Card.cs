@@ -1,9 +1,14 @@
 ﻿namespace DandE.DocumentHandler
 {
+    using Microsoft.Extensions.Logging;
+
     public abstract class Card
     {
-        public Card(byte[] bytes)
+        protected static ILogger Logger { get; set; }
+
+        public Card(byte[] bytes, ILogger logger)
         {
+            Logger = logger;
             Populate(bytes);
         }
 
@@ -17,8 +22,9 @@
             this.Title = result.Title;
         }
 
-        public Card(string fileName)
+        public Card(string fileName, ILogger logger)
         {
+            Logger = logger;
             Populate(File.ReadAllBytes(fileName));
         }
 
@@ -29,5 +35,27 @@
         public byte[] Bytes { get; set; }
 
         public string Title { get; set; }
+
+        public static bool DocumentIsPermittedForCurrentUser(object currentUser, string fileName, ILogger logger)
+        {
+            try
+            {
+                File.ReadAllBytes(fileName);
+
+                throw new FileNotFoundException(fileName);
+                return true;
+            }
+            catch(ForbiddenDocumentException)
+            {
+                return false;
+            }
+            catch(FileNotFoundException fileNotFound)
+            {
+                logger.LogInformation($"Could not find file '{fileName}'");
+                logger.LogError(fileNotFound.ToString());
+
+                throw;
+            }
+        }
     }
 }

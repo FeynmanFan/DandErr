@@ -75,3 +75,4 @@ _[Ss]cripts
 *.dot[Cc]over
 /.vs
 /DandE.Web/documents/~$st Document.docx
+/DandE.DocumentHandler.Tests/Resources/~$st Document.docx
