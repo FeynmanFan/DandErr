@@ -23,13 +23,13 @@ namespace DandE.DocumentHandler.Tests
         [Fact]
         public void OutputFileFunctionProducesFile()
         {
-            var filePath = @"C:\DAndErr\outputfile.txt";
+            var filePath = @"/home/nt-user/workspace/DandErr/outputfile.txt";
 
-            Assert.True(File.Exists(filePath));
+            Assert.True(File.Exists(filePath), "$File does not exist at {filePath}");
 
             var result = File.ReadAllText(filePath);
 
-            Assert.True(!string.IsNullOrEmpty(result));
+            Assert.True(!string.IsNullOrEmpty(result), "File existed, but is empty");
         }
     }
 }
