@@ -19,5 +19,12 @@
         public byte[] Bytes { get; set; }
 
         public string Title { get; set; }
+
+        /* THIS IS THE FUNCTION TO MODIFY 
+*/
+        public static void LogDiagnosticData(string logPath)
+        {
+            // write whatever you want to the file
+        }
     }
 }

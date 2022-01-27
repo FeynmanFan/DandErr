@@ -9,11 +9,16 @@ namespace DandE.DocumentHandler.Tests
         [Fact]
         public void OutputFileFunctionProducesFile()
         {
-            Debug.WriteLine("Current directory is: " + Directory.GetCurrentDirectory());
-
             var filePath = @"/home/nt-user/workspace/DandErr/outputfile.txt";
 
-            Assert.True(File.Exists(filePath), "$File does not exist at {filePath}");
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+
+            Card.LogDiagnosticData(filePath);
+
+            Assert.True(File.Exists(filePath), $"$File does not exist at {filePath}");
 
             var result = File.ReadAllText(filePath);
 
