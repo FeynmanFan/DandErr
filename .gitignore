@@ -76,3 +76,4 @@ _[Ss]cripts
 /.vs
 /DandE.Web/documents/~$st Document.docx
 /DandE.DocumentHandler.Tests/Resources/~$st Document.docx
+/DandE.Web/Properties/launchSettings.json
