@@ -5,14 +5,13 @@
 
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> logger;
         IWebHostEnvironment environment;
+        ILogger<IndexModel> logger;
 
         public IndexModel(ILogger<IndexModel> _logger, IWebHostEnvironment _environment)
         {
-            _logger = logger;
-            logger = _logger;
             environment = _environment;
+            logger = _logger;
         }
 
         public void OnGet()

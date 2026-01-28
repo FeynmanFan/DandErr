@@ -1,17 +1,14 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace DandE.DocumentHandler
+﻿namespace DandE.DocumentHandler
 {
     public class WordDocumentCard : Card
     {
-        DocumentParser parser;
+        private DocumentParser? parser;
 
         public WordDocumentCard(byte[] bytes) : base(bytes)
         {
         }
 
         public WordDocumentCard(string fileName) : base(File.ReadAllBytes(fileName)) { }
-
 
         public override DocumentParser Parser
         {

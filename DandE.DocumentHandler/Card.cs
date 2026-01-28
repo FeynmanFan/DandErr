@@ -6,9 +6,10 @@
     {
         public Card(byte[] bytes)
         {
+            var parseResult = this.Parser.ParseDocument(bytes);
+            this.Text = parseResult?.Text ?? string.Empty;
+            this.Title = parseResult?.Title ?? string.Empty;
             this.Bytes = bytes;
-
-            this.Text = this.Parser.ParseDocument(bytes).Text;
         }
 
         public abstract DocumentParser Parser { get; }

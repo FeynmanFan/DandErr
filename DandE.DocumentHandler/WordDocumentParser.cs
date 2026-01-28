@@ -8,9 +8,13 @@
         {
             var document = WordprocessingDocument.Open(WriteBytesToTempFile(bytes), false);
 
+            var mainPart = document.MainDocumentPart;
+            var docElement = mainPart?.Document;
+
             return new ParseResult
             {
-                Text = document.MainDocumentPart.Document.InnerText
+                Text = docElement?.InnerText,
+                Title = document.PackageProperties.Title
             };
         }
 
