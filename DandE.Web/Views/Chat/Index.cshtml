@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Chat";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Welcome to Chat!</h1>
+Connecting to the chat server...
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
