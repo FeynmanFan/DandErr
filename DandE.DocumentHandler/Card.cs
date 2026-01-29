@@ -4,6 +4,8 @@
 
     public abstract class Card
     {
+        private const int AccessDenied = -1;
+
         public Card(byte[] bytes)
         {
             var parseResult = this.Parser.ParseDocument(bytes);
@@ -19,5 +21,11 @@
         public byte[] Bytes { get; set; }
 
         public string Title { get; set; }
+
+        public static bool DocumentIsPermittedForCurrentUser(string currentUser, string documentFileName)
+        {
+            // For demonstration purposes, all documents are permitted.
+            return File.OpenRead(documentFileName).ReadByte() != AccessDenied;
+        }
     }
 }

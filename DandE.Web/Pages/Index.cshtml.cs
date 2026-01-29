@@ -25,7 +25,14 @@
             {
                 string[] documents = GetDocumentFiles();
 
-                return documents.Select(fileName => new WordDocumentCard(fileName));
+                var cards = new List<WordDocumentCard>();
+
+                foreach (var document in documents)
+                {
+                    cards.Add(new WordDocumentCard(document));
+                }
+
+                return cards;
             }
         }
 
@@ -36,7 +43,10 @@
             var docPath = Path.Combine(rootPath, "../documents");
 
             var documents = Directory.GetFiles(docPath, "*.docx");
-            return documents;
+
+            string CurrentUser = "TestUser";
+
+            return [.. documents.Where(fileName => Card.DocumentIsPermittedForCurrentUser(CurrentUser, fileName))];
         }
     }
 }
