@@ -17,6 +17,10 @@ body {
   margin-bottom: 60px;
 }
 
-.documentTitle{
+.document{
+    text-align: left;
+}
+
+.infopanel{
     text-align: left;
 }

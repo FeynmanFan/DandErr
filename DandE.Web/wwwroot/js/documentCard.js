@@ -1,7 +1,8 @@
 var documentCard = /** @class */ (function () {
-    function documentCard(title, contents) {
+    function documentCard(title, contents, length) {
         this.title = title;
         this.contents = contents;
+        this.length = length;
     }
     Object.defineProperty(documentCard.prototype, "length", {
         get: function () {
