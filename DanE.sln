@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DandE.DocumentHandler.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DandE.Chat", "DandE.Chat\DandE.Chat.csproj", "{34BBD188-3936-4760-A405-152AEE7517C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DandE.Logging", "DandE.Logging\DandE.Logging.csproj", "{FE24FE3D-0B0C-443B-B0FE-D818B63B2E20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{34BBD188-3936-4760-A405-152AEE7517C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34BBD188-3936-4760-A405-152AEE7517C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34BBD188-3936-4760-A405-152AEE7517C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE24FE3D-0B0C-443B-B0FE-D818B63B2E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE24FE3D-0B0C-443B-B0FE-D818B63B2E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE24FE3D-0B0C-443B-B0FE-D818B63B2E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE24FE3D-0B0C-443B-B0FE-D818B63B2E20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

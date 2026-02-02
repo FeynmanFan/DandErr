@@ -46,6 +46,8 @@
 
             string CurrentUser = "TestUser";
 
+            this.logger.LogInformation("Filtering documents for user: {User}", CurrentUser);
+
             return [.. documents.Where(fileName => Card.DocumentIsPermittedForCurrentUser(CurrentUser, fileName))];
         }
     }

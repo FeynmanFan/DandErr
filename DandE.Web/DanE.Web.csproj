@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DandE.Chat\DandE.Chat.csproj" />
     <ProjectReference Include="..\DandE.DocumentHandler\DandE.DocumentHandler.csproj" />
+    <ProjectReference Include="..\DandE.Logging\DandE.Logging.csproj" />
   </ItemGroup>
 
 </Project>

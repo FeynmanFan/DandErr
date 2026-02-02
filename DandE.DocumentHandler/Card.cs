@@ -16,7 +16,13 @@
 
         public abstract DocumentParser Parser { get; }
 
-        public string Text { get; set; }
+        public string Text { 
+            get
+            {
+                return "This is wrong";
+            }
+            set;
+        }
 
         public byte[] Bytes { get; set; }
 
